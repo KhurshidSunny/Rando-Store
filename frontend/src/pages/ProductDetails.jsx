@@ -42,6 +42,8 @@ export default function ProductDetails() {
     navigate("/products");
   };
 
+  const imgUrl = product.img.split("/").slice(1).join("/");
+
   if (isLoading) return <LoadingSpinner />;
   if (isError) return <ErrorMessage message={error.message} />;
 
@@ -49,7 +51,7 @@ export default function ProductDetails() {
     <div className="min-h-screen bg-gray-50 py-12 px-4">
       <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-xl p-8">
         <img
-          src={`/img/${product?.img?.split("/").pop()}`}
+          src={`${import.meta.env.VITE_LOCAL_URL}/${imgUrl}`}
           alt={product.name}
           className="w-full h-64 object-cover rounded-md mb-6"
         />

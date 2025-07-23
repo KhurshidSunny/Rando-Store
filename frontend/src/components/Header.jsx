@@ -15,23 +15,22 @@ function Header() {
     <header className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          
-          {/* Left: Logo */}
-          <Link 
-            to="/" 
+          {/* Logo */}
+          <Link
+            to="/"
             className="text-2xl font-bold text-white hover:text-blue-100 transition-colors duration-200"
           >
             🛍️ Rando Store
           </Link>
 
-          {/* Center: Nav Links */}
+          {/* Nav Links */}
           <nav className="hidden md:flex space-x-8">
             <Link
               to="/products"
               className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                isActivePath('/products')
-                  ? 'bg-white/20 text-white shadow-md'
-                  : 'text-blue-100 hover:text-white hover:bg-white/10'
+                isActivePath("/products")
+                  ? "bg-white/20 text-white shadow-md"
+                  : "text-blue-100 hover:text-white hover:bg-white/10"
               }`}
             >
               🛒 Buy Products
@@ -39,26 +38,25 @@ function Header() {
             <Link
               to="/create"
               className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                isActivePath('/create')
-                  ? 'bg-white/20 text-white shadow-md'
-                  : 'text-blue-100 hover:text-white hover:bg-white/10'
+                isActivePath("/create")
+                  ? "bg-white/20 text-white shadow-md"
+                  : "text-blue-100 hover:text-white hover:bg-white/10"
               }`}
             >
               📦 Sell Products
             </Link>
           </nav>
 
-          {/* Right: Cart */}
+          {/*  Cart */}
           <Link
             to="/checkout"
             className="relative p-3 text-white hover:text-blue-100 hover:bg-white/10 rounded-lg transition-all duration-200"
           >
             <ShoppingCartIcon className="h-6 w-6" />
-            {cartItemsCount > 0 && (
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center animate-pulse">
-                {cartItemsCount}
-              </span>
-            )}
+
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center animate-pulse">
+              {cartItemsCount}
+            </span>
           </Link>
         </div>
 
@@ -68,9 +66,9 @@ function Header() {
             <Link
               to="/products"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActivePath('/products')
-                  ? 'bg-white/20 text-white'
-                  : 'text-blue-100 hover:text-white hover:bg-white/10'
+                isActivePath("/products")
+                  ? "bg-white/20 text-white"
+                  : "text-blue-100 hover:text-white hover:bg-white/10"
               }`}
             >
               Buy Products
@@ -78,9 +76,9 @@ function Header() {
             <Link
               to="/create"
               className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                isActivePath('/create')
-                  ? 'bg-white/20 text-white'
-                  : 'text-blue-100 hover:text-white hover:bg-white/10'
+                isActivePath("/create")
+                  ? "bg-white/20 text-white"
+                  : "text-blue-100 hover:text-white hover:bg-white/10"
               }`}
             >
               Sell Products

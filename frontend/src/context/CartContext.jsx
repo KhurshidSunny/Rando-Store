@@ -34,23 +34,12 @@ export function CartProvider({ children }) {
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
-      const existingItem = prevItems.find((item) => item.id === product.id);
-
-      if (existingItem) {
-        const updatedItems = prevItems.map((item) =>
-          item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-        toast.success(`${product.name} quantity updated in cart!`);
-        return updatedItems;
-      } else {
-        const newItem = { ...product, quantity: 1 };
-        toast.success(`${product.name} added to cart!`, {
-          id: `add-${product.id}`,
-        });
-        return [...prevItems, newItem];
-      }
+      const newItem = { ...product, quantity: 1 };
+      toast.success(`${product.name} added to cart!`, {
+        id: `add-${product.id}`,
+      });
+      return [...prevItems, newItem];
+      // }
     });
   };
 

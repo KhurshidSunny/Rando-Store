@@ -3,9 +3,8 @@ import { ShoppingCartIcon } from "@heroicons/react/24/outline";
 import { useCart } from "../context/CartContext";
 
 function Header() {
-  const { getTotalItems } = useCart();
+  const { cartItems } = useCart();
   const location = useLocation();
-  const cartItemsCount = getTotalItems();
 
   const isActivePath = (path) => {
     return location.pathname === path;
@@ -55,7 +54,7 @@ function Header() {
             <ShoppingCartIcon className="h-6 w-6" />
 
             <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center animate-pulse">
-              {cartItemsCount}
+              {cartItems.length}
             </span>
           </Link>
         </div>

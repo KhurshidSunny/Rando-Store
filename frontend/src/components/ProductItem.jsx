@@ -11,6 +11,7 @@ function ProductItem({ product }) {
   const url = import.meta.env.VITE_LOCAL_URL;
   const { cartItems, addToCart, isCartInitialized, removeFromCart } = useCart();
   const { mutate: deleteProduct, isLoading } = useDeleteProduct();
+  console.log(cartItems);
 
   const { id, name, price, img } = product;
   const isInCart = cartItems.some((item) => item.id === id);

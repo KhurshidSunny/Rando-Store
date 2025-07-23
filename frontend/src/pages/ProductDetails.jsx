@@ -42,7 +42,7 @@ export default function ProductDetails() {
     navigate("/products");
   };
 
-  const imgUrl = product.img.split("/").slice(1).join("/");
+  const imgUrl = product?.img.split("/").slice(1).join("/");
 
   if (isLoading) return <LoadingSpinner />;
   if (isError) return <ErrorMessage message={error.message} />;
